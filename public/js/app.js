@@ -36,5 +36,4 @@ weatherForm.addEventListener( 'submit', (e) => {
         messageOne.textContent = 'You must provide a valid location ...'
     }
 
-
 })
