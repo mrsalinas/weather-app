@@ -54,17 +54,16 @@ app.get('/weather', (req, res) => {
         console.log('Error', error)
         //console.log('Data', data)
         
-        forecast( latitude, longitude, (error, pronostico) => {
+        forecast( latitude, longitude, (error, data) => {
             if ( error ) {
                 return res.send({ error })
             }
 
-            if (!pronostico) {
-                console.log('pronostico', pronostico)
-            }
+
+            console.log('valor de forecast: ', data)
             
             res.send({
-                pronostico: pronostico,
+                pronostico: 'Data agregada a la respuesta del backend',
                 location: placeName,
                 address: req.query.address
             })  

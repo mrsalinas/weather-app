@@ -11,8 +11,9 @@ const forecast = (latitude, longitude, callback) => {
         } else if ( data.body.error ) {
             callback('There is no data for the latitude and longitude provided', undefined)
         } else {
+            console.log(data.body.current)
             callback(undefined,
-                console.log(' Today is doing '+data.body.current.temperature+'  but it feels like: '+ data.body.current.feelslike))
+                console.log(' Today is doing '+data.body.current.temperature+'  but it feels like: '+ data.body.current.feelslike+'. The humidity is of '+data.body.current.humidity+' The description is: '+data.body.current.weather_descriptions[0]))
         }
 
 
